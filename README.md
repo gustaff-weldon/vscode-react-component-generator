@@ -2,24 +2,27 @@
 
 Simple, template-based React component generator for VS Code.
 
-Based on the generate-react-component extension by [@joshjg](https://github.com/joshjg/vscode-generate-react-component).
-His extension stopped working on February 2019 because of a VSCode update, and since it hasn't been fixed by the time this version was released (June 17th, 2019), I took the liberty to create this extension by applying [@nonjene's pull request](https://github.com/joshjg/vscode-generate-react-component/pull/6) to fix it and updated the component code to the current syntax.
+Based on the generate-react-component extension by [@lukemorales](https://github.com/lukemorales/vscode-react-component-generator).
+I have switched template files to TS, removed class component generation
 
 ## Usage
 * Right click any directory in the explorer panel
-* Select Component or Class Component
+* Select Component
 * Input name and choose options
 * Submit
 
 ## What's the deal with these files?
 
-The default templates are opinionated, admittedly. They adhere to the best practices promoted in [this video by Scott Bowler](https://www.youtube.com/watch?v=TQ4wW63eoIY).
 * With **Component** you can generate a stateless component by typing `n` when asked if you want to use Hooks/State. If you type `y`, it will generate a component **with Hooks setup**.
-* With **Class Component** you will generate a stateful component. For now, typing `y` or `n` will just insert or not a state property.
-* Styling components here are done by using [styled-components](https://www.styled-components.com/). Import declaration is commented by default so your app doesn't break on first render, but the setup is already there.
-* `package.json` simply passes the component through so you can `import SomeComponent from '/components/SomeComponent'`
+- You'll get main component file
+- index that rexports the default from component
+- spec and stories files
+- types file
 
-However, this package does not force these principles. You can easily customize the templates to match your own tech stack.
+Obviosly not all components will have stories, so feel free to remove it.
+Same goes for types file, if no types are exported from component, just remove the file and update index.ts
+
+This package does not force these files though. You can easily customize the templates to match your own tech stack.
 
 ## Extension Settings
 
@@ -27,9 +30,8 @@ The component templates are completely customizable. You can add additional bool
 
 This extension contributes the following settings:
 
-* `react-component-generator.conditionals`: Array of strings which will toggle certain portions of your templates.
-* `react-component-generator.componentTemplatePath`: Absolute path to custom **component** template directory. If left blank, defaults to built-in template.
-* `react-component-generator.containerTemplatePath`: Absolute path to custom **classComponent** template directory. If left blank, defaults to built-in template.
+* `zencargo-react-component-generator.conditionals`: Array of strings which will toggle certain portions of your templates.
+* `zencargo-react-component-generator.componentTemplatePath`: Absolute path to custom **component** template directory. If left blank, defaults to built-in template.
 
 ### Syntax
 

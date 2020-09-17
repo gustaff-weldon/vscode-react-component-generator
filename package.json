@@ -1,14 +1,14 @@
 {
 	"name": "react-component-generator",
-	"displayName": "React Component Generator",
+	"displayName": "Zencargo React Component Generator",
 	"description": "Generate React Component structure from easily customizable templates",
-	"author": "Luke Morales",
+	"author": "Bernard Lange, based on work from Luke Morales",
 	"license": "MIT",
 	"version": "0.1.0",
-	"publisher": "lukemorales",
+	"publisher": "gustaff-weldon",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/lukemorales/vscode-react-component-generator"
+		"url": "https://github.com/gustaff-weldon/vscode-react-component-generator"
 	},
 	"engines": {
 		"vscode": "^1.5.0"
@@ -28,39 +28,29 @@
 	"contributes": {
 		"configuration": {
 			"type": "object",
-			"title": "react-component-generator configuration",
+			"title": "zencargo-react-component-generator configuration",
 			"properties": {
-				"react-component-generator.conditionals": {
+				"zencargo-react-component-generator.conditionals": {
 					"type": "array",
 					"items": {
 						"type": "string"
 					},
 					"uniqueItems": true,
 					"default": [
-						"Hooks/State"
 					],
 					"description": "Toggle certain portions of your templates with these named booleans."
 				},
-				"react-component-generator.componentTemplatePath": {
+				"zencargo-react-component-generator.componentTemplatePath": {
 					"type": "string",
 					"default": "",
 					"description": "Absolute path to custom **component** template directory. If left blank, defaults to built-in template."
 				},
-				"react-component-generator.classComponentTemplatePath": {
-					"type": "string",
-					"default": "",
-					"description": "Absolute path to custom **classComponent** template directory. If left blank, defaults to built-in template."
-				}
 			}
 		},
 		"commands": [
 			{
 				"command": "extension.gen_component",
 				"title": "Generate  Component"
-			},
-			{
-				"command": "extension.gen_classComponent",
-				"title": "Generate Class Component"
 			}
 		],
 		"menus": {
@@ -68,11 +58,6 @@
 				{
 					"when": "resourceScheme == file",
 					"command": "extension.gen_component",
-					"group": "navigation@10"
-				},
-				{
-					"when": "resourceScheme == file",
-					"command": "extension.gen_classComponent",
 					"group": "navigation@10"
 				}
 			]

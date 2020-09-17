@@ -43,7 +43,7 @@ const generate = (componentName, inputPath, mode, enabledOptions) => {
 		// use included templates if user-defined path is empty
 		const templatePath =
 			vscode.workspace
-				.getConfiguration('react-component-generator')
+				.getConfiguration('zencargo-react-component-generator')
 				.get(`${mode}TemplatePath`)
 				.trim() || path.resolve(__dirname, `${mode}_template`);
 
@@ -77,7 +77,7 @@ const createDisposable = type =>
 			.then(name => {
 				if (name === undefined) return undefined;
 
-				const options = vscode.workspace.getConfiguration('react-component-generator').get('conditionals');
+				const options = vscode.workspace.getConfiguration('zencargo-react-component-generator').get('conditionals');
 
 				// Display a new input box for every conditional, resolve all in series
 				const p = Promise.resolve({ name, enabledOptions: {} });
@@ -113,9 +113,7 @@ const createDisposable = type =>
 
 const activate = context => {
 	context.subscriptions.push(
-		createDisposable('component'),
-		createDisposable('classComponent'),
-		createDisposable('rnComponent')
+		createDisposable('component')
 	);
 };
 
