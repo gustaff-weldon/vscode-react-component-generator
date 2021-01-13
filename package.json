@@ -4,7 +4,7 @@
 	"description": "Generate React Component structure from easily customizable templates",
 	"author": "Bernard Lange, based on work from Luke Morales",
 	"license": "MIT",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"publisher": "gustaff-weldon",
 	"repository": {
 		"type": "git",

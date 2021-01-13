@@ -3,21 +3,30 @@ import React from 'react';
 import __ComponentName__ from './__ComponentName__';
 
 export default {
-  title: 'Dashboard/__ComponentName__',
+  title: 'Design System/__ComponentName__',
   component: __ComponentName__,
-  decorators: [
-    (Story) => (
-      <div className="w-60">
-        <Story />
-      </div>
-    )
-  ]
+  parameters: {
+    docs: {
+      description: {
+        component: 'Generic component description'
+      }
+    }
+  },
+  args: {}
 };
 
-export const Default = () => {
-  const props = {};
-
-  return (
-    <__ComponentName__ {...props} />
-  );
+export const Template = (args) => {
+  return <__ComponentName__ {...args} />;
 };
+
+export const Default = Template.bind({});
+
+Default.parameters = {
+  docs: {
+    description: {
+      story: 'Variany description'
+    }
+  }
+};
+
+Default.args = {};
