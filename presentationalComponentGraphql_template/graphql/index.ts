@@ -1,0 +1,1 @@
+export { useXyzQuery } from './xyzQuery.generated';

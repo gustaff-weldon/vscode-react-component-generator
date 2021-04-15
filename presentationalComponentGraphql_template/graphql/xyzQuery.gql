@@ -1,0 +1,7 @@
+query xyzQuery($id: String!) {
+  xyz(ids: [$ids]) {
+    nodes {
+      name
+    }
+  }
+}

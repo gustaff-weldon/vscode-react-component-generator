@@ -4,7 +4,7 @@
 	"description": "Generate React Component structure from easily customizable templates",
 	"author": "Bernard Lange, based on work from Luke Morales",
 	"license": "MIT",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publisher": "gustaff-weldon",
 	"repository": {
 		"type": "git",
@@ -48,17 +48,44 @@
 		},
 		"commands": [
 			{
-				"command": "extension.gen_component",
-				"title": "Generate  Component"
+				"command": "extension.gen_presentationalComponent",
+				"title": "Generate Component"
+			},
+			{
+				"command": "extension.gen_containerComponent",
+				"title": "Generate Container Component"
+			},
+			{
+				"command": "extension.gen_presentationalComponentGraphql",
+				"title": "Generate Component with GrapQL"
+			},
+			{
+				"command": "extension.gen_presentationalFormComponent",
+				"title": "Generate Form component"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
 					"when": "resourceScheme == file",
-					"command": "extension.gen_component",
+					"command": "extension.gen_presentationalComponent",
 					"group": "navigation@10"
-				}
+				},
+				{
+					"when": "resourceScheme == file",
+					"command": "extension.gen_containerComponent",
+					"group": "navigation@10"
+				},
+				{
+					"when": "resourceScheme == file",
+					"command": "extension.gen_presentationalComponentGraphql",
+					"group": "navigation@10"
+				},
+				{
+					"when": "resourceScheme == file",
+					"command": "extension.gen_presentationalFormComponent",
+					"group": "navigation@10"
+				}	
 			]
 		}
 	},

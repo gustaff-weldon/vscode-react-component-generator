@@ -5,6 +5,15 @@ Simple, template-based React component generator for VS Code.
 Based on the generate-react-component extension by [@lukemorales](https://github.com/lukemorales/vscode-react-component-generator).
 I have switched template files to TS, removed class component generation
 
+## Build
+To create addon from code run:
+```
+yarn package
+```
+
+## Installation
+Navigate to the `zencargo-react-component-generator-X.Y.Z.vsix` extension file from Visual Studio Code. Right click, `Install Extension VSIX`.
+
 ## Usage
 * Right click any directory in the explorer panel
 * Select Component
